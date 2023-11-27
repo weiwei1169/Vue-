@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const deepCopy1 = (obj) => {
+            return JSON.parse(JSON.stringify(obj))
+        }
+
+        const deepCopy2 = (obj) => {
+            if (typeof obj !== "object" || obj == null) {
+                return obj
+            }
+            let copy = Array.isArray(obj) ? [] : {}
+            for (key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    copy = deepCopy2(obj[key])
+                }
+            }
+        }
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
